@@ -173,7 +173,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Mi Foro</h1>
+        <h1>Foro Leandro Maciel</h1>
         {/* Navegación entre vistas */}
         <nav className="navbar">
           <button onClick={() => setCurrentView('foro')} className={currentView === 'foro' ? 'active' : ''}>Foro</button>
