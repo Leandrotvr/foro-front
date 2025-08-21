@@ -11,12 +11,15 @@ function App() {
   const [content, setContent] = useState('');
   const [author, setAuthor] = useState('');
 
+  // La URL base de tu back-end en Render
+  const API_BASE_URL = 'https://foro-back.onrender.com/api/posts';
+
   // useEffect para obtener los posts del back-end cuando el componente se monta
   useEffect(() => {
     // Definimos la función asíncrona para obtener los datos
     const fetchPosts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/posts');
+        const response = await fetch(API_BASE_URL);
         const data = await response.json();
         setPosts(data);
       } catch (error) {
@@ -36,7 +39,7 @@ function App() {
 
     try {
       // Hacemos la petición POST al back-end para crear el post
-      const response = await fetch('http://localhost:5000/api/posts', {
+      const response = await fetch(API_BASE_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
